@@ -1,0 +1,279 @@
+:root {
+  --main-color: #f66f00;
+  --sec-color: #003366;
+  --main-transition: 0.7s;
+  --sec-transition: 0.3s;
+  --main-padding: 16px;
+  --sec-padding: 50px;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  vertical-align: middle;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  direction: rtl;
+  line-height: 1.5;
+  font-family: "Almarai", sans-serif;
+  /* height: 3000px; */
+}
+.container {
+  padding: var(--main-padding);
+  margin: 0 auto;
+}
+@media (mix-width: 768px) {
+  .container {
+    max-width: 760px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+}
+/* ****************************** GLOBAL ************* */
+/* **** start header **** */
+
+header nav {
+  min-height: 60px;
+  background-color: var(--sec-color);
+  padding: 0 var(--main-padding);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 780px) {
+  header nav {
+    justify-content: center;
+    flex-flow: column;
+  }
+}
+header nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 780px) {
+  header nav ul {
+    flex-flow: column;
+  }
+}
+
+header nav ul a {
+  color: white;
+  font-size: 1.2em;
+  font-weight: 700;
+  display: block;
+  padding: 1.2em;
+  transition: var(--sec-transition);
+}
+@media (max-width: 780px) {
+  header nav ul {
+    width: 100%;
+    text-align: center;
+  }
+  header nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+}
+header nav ul a:hover {
+  background-color: var(--main-color);
+}
+header nav .logo {
+  width: 90px;
+}
+@media (max-width: 780px) {
+  header nav .logo {
+    margin: var(--main-padding) 0;
+    width: 190px;
+  }
+}
+
+header .landing-page {
+  height: 90vh;
+  position: relative;
+}
+header .landing-page::after {
+  content: "";
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(#00092c73, #00092c73),
+    url("imgs/facebook\ cover-01.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+header .landing-page .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  width: 60%;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.719);
+  box-shadow: 0px 0px 10px black;
+  padding: var(--main-padding);
+}
+@media (max-width: 780px) {
+  header .landing-page .content {
+    width: 100%;
+  }
+}
+header .landing-page .content h1 {
+  margin-bottom: var(--main-padding);
+  font-weight: bolder;
+  font-size: 3em;
+}
+header .landing-page .content h2 {
+  margin-bottom: var(--main-padding);
+  font-size: 2em;
+  font-weight: bold;
+}
+header .landing-page .content p {
+  font-size: 1.4em;
+  /* font-weight: bold; */
+}
+
+header .landing-page .content p:not(:last-child) {
+  margin-bottom: var(--main-padding);
+  letter-spacing: 1.5px;
+  font-size: 2em;
+}
+@media (max-width: 780px) {
+  header .landing-page .content p,
+  header .landing-page .content h1,
+  header .landing-page .content h2 {
+    font-size: 1.8em !important;
+  }
+}
+header .landing-page .content p:not(:last-child) {
+  margin-bottom: var(--main-padding);
+  letter-spacing: 1.5px;
+  font-size: 2em;
+}
+/* **** end header **** */
+.about {
+  width: 70%;
+  margin: var(--sec-padding) auto;
+  background-color: #d5d5d5;
+  padding: var(--main-padding);
+}
+@media (max-width: 780px) {
+  .about {
+    width: 100%;
+  }
+}
+.about div h1 {
+  padding: var(--main-padding);
+  background-color: var(--sec-color);
+  color: white;
+  font-weight: bolder;
+  cursor: pointer;
+  position: relative;
+  transition: var(--sec-transition);
+}
+.about div h1:hover {
+  background-color: #021047;
+}
+.about div h1::before {
+  content: "+";
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translatey(-50%);
+  font-size: 1.2em;
+}
+.about div.active h1::before {
+  content: "-";
+}
+
+.about div .para h2 {
+  padding: 12px;
+}
+.about div .para p {
+  padding: var(--main-padding);
+  font-weight: bold;
+}
+.about div .para ol {
+  padding: 1em 2em;
+  font-weight: bold;
+}
+
+.about div .para {
+  max-height: 0;
+  overflow: hidden;
+  transition: var(--sec-transition);
+}
+
+.about div.active .para {
+  max-height: fit-content;
+  transition: 2s;
+}
+.about div .para table {
+  width: 100%;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bolder;
+  border-collapse: collapse;
+}
+.about div .para table th,
+.about div .para table td {
+  padding: 0.7em;
+  border: 2px solid var(--main-color);
+}
+.about div .para table img {
+  width: 150px;
+}
+footer {
+  text-align: center;
+  background-color: var(--sec-color);
+  color: white;
+  padding: var(--main-padding);
+  font-size: 1.4em;
+}
+footer strong {
+  color: var(--main-color);
+  font-weight: bold;
+}
